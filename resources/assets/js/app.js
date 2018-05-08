@@ -1,10 +1,14 @@
+import "core-js/fn/object/assign";
 import Vue from 'vue';
 import { populateAmenitiesAndPrices } from './helpers';
 let model = JSON.parse(window.vuebnb_listing_model);
 model = populateAmenitiesAndPrices(model);
 /*document.addEventListener('keyup', evt=>{
 
-})*/
+})
+if (typeof Object.assign != 'function'){
+
+}*/
 var app = new Vue({
   el: '#app',
   data: Object.assign(model, {
